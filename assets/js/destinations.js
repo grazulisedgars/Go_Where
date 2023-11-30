@@ -4,52 +4,52 @@ var destinationSun = [
     {
         city: "Perth",
         country: "Australia",
-        video: " "
+        video: "x3knjhq"
     },
     {
         city: "San Diego",
         country: "United States of America",
-        video: " "
+        video: "x2owlis"
     },
     {
         city: "Rome",
         country: "Italy",
-        video: " "
+        video: "x3uptjc"
     },
     {
         city: "Las Vegas",
         country: " United States of America",
-        video: " "
+        video: "x164a79"
     },
     {
         city: "Cairo",
         country: "Egypt",
-        video: " "
+        video: "x8fahma"
     },
     {
         city: "Athens",
         country: "Greece",
-        video: " "
+        video: "x6hb4ug"
     },
     {
         city: "Papeete, Tahiti",
         country: "French Polynesia",
-        video: " "
+        video: "x164cyd"
     },
     {
         city: "Cancun",
         country: " Mexico",
-        video: " "
+        video: "x8lw50qv"
     },
     {
         city: "Dubai",
         country: "United Arab Emirates",
-        video: " "
+        video: "x8cik4h"
     },
     {
         city: "Bangkok",
         country: "Thailand",
-        video: " "
+        video: "x8m61eb"
     }
 ];
 
@@ -61,51 +61,51 @@ var destinantionSnow = [
     {
         city: "Anchorage, Alaska",
         country: "United States of America",
-        video: " "
+        video: "xtrd7k"
     },
     {
         city: "Reykjavik",
         country: "Iceland",
-        video: " "
+        video: "x8npbmo"
     },
     {
         city: "Mammoth Lakes",
         country: "United States of America",
-        video: " "
+        video: "x1eljcf"
     },
     {
         city: "Riga",
         country: "Latvia",
-        video: " "
+        video: "x2lc6tq"
     },
     {
         city: "Oslo",
         country: "Norway",
-        video: " "
+        video: "x8m8lta"
     },
     {
         city: "Helsinki",
         country: "Finland",
-        video: " "
+        video: "x8bt8ut"
     },
     {
         city: "Stockholm",
         country: "Sweden",
-        video: " "
+        video: "x8j6xrc"
     },
     {
         city: "Copenhagen",
         country: "Denmark",
-        video: " "
+        video: "x8j6xr7"
     },
     {
         city: "Zakapone",
         country: "Poland",
-        video: " "
+        video: "x8opc5b"
     },
     {
         city: "Geneva",
         country: "Switzerland",
-        video: " "
+        video: "x87wtq4"
     }
 ];
