@@ -25,6 +25,8 @@ $("#sunny").on("click", function(event) {
     fetchWeatherData(randomSunnyDestination.city);
     // Fetches current weather info
     dailymotion.createPlayer('video-player', { video: randomSunnyDestination.video});
+    // Changes background image
+    $("#second-screen").addClass("bg-sunny");
 });
 
 
@@ -39,7 +41,9 @@ $("#snowy").on("click", function(event) {
     fetchWeatherData(randomSnowyDestination.city);
     // Fetches current weather info
     dailymotion.createPlayer('video-player', { video: randomSnowyDestination.video});
-});
+    // Changes background image
+    $("#second-screen").addClass("bg-snowy");
+});  
 
 
 // Function to get a random sunny destination 
