@@ -90,23 +90,27 @@ function fetchWeatherData(sunnyCity) {
 })
 };
 
-var likes = 0;
-var dislikes = 0;
 
-$("#thumbsUp").on("click", function(event) {
+// Thumbs Up/ Thumbs Down click events
+    var likes = 0;
+    var dislikes = 0;
+
+    $("#thumbsUp").on("click", function(event) {
     event.preventDefault();
     likes ++;
 
     updateLikeDislikeSection();
 });
 
-$("#thumbsDown").on("click", function(event) {
+    $("#thumbsDown").on("click", function(event) {
     event.preventDefault();
     dislikes++;
 
     updateLikeDislikeSection();
 });
 
+
+// Thumbs Up/ Thumbs Down functionality 
 function updateLikeDislikeSection() {
     $("#like").text("Likes: ").append(likes);
     $("#dislike").text("Dislikes: ").append(dislikes);
