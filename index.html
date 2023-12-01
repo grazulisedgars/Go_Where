@@ -13,7 +13,7 @@
 <header>
     <img src="" alt=""> <!-- logo image -->
 
-    <button> Go Back! </button> <!-- Comes up only when presented with second screen -->
+    <button id="go-back"> Go Back! </button> <!-- Comes up only when presented with second screen -->
 
 </header>
 
@@ -27,9 +27,10 @@
     <div id="second-screen">
         <section id="city-country-container">
             <!-- <h2> City, Country of users choice</h2> h2 probably have to be dynamically generated -->
-            <button><i class="fa-solid fa-thumbs-up fa-lg" style="color: #42bc20;"></i></button>
-            <button><i class="fa-solid fa-thumbs-down fa-flip-horizontal fa-lg" style="color: #cc1414;"></i></button>
+          
         </section>
+        <button id="thumbsUp"><i class="fa-solid fa-thumbs-up fa-lg" style="color: #42bc20;"></i></button>
+        <button id="thumbsDown"><i class="fa-solid fa-thumbs-down fa-flip-horizontal fa-lg" style="color: #cc1414;"></i></button>
 
         <aside id="dislike"> </aside> <!-- For dislikes column on left-hand side-->
         <aside id="like"></aside> <!-- For likes columnn on right-hand side-->
