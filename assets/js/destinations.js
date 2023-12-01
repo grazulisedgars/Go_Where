@@ -40,7 +40,7 @@ var destinationSun = [
     {
         city: "Cancun",
         country: " Mexico",
-        video: "x8lw50qv"
+        video: "x8lw50q"
     },
     {
         city: "Dubai",
@@ -58,7 +58,7 @@ var destinationSun = [
 
 // Snowy Destinations
 
-var destinantionSnow = [
+var destinationSnow = [
     {
         city: "Anchorage, Alaska",
         country: "United States of America",
