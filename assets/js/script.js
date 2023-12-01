@@ -2,6 +2,7 @@
 // Hides 2nd second-screen 
 $(document).ready(function () {
     $("#second-screen").hide();
+    $("#go-back").hide();
 });
 
 
@@ -10,6 +11,7 @@ $("#go-back").on("click", function(event) {
     event.preventDefault();
     $("#second-screen").hide();
     $("#start-screen").show();
+    $("#go-back").hide();
     // Perhaps add a line where it clears local storage? Go back = refresh?
 })
 
@@ -21,6 +23,7 @@ $("#sunny").on("click", function(event) {
     $("#second-screen").show();
     $("#city-country-container").empty();
     $("#second-screen").removeClass();
+    $("#go-back").show();
     // Fetches current weather info
     var randomSunnyDestination = getRandomSunnyDestination();
     fetchWeatherData(randomSunnyDestination.city);
@@ -38,6 +41,7 @@ $("#snowy").on("click", function(event) {
     $("#second-screen").show();
     $("#city-country-container").empty();
     $("#second-screen").removeClass();
+    $("#go-back").show();
     // Fetches current weather info
     var randomSnowyDestination = getRandomSnowyDestination();
     fetchWeatherData(randomSnowyDestination.city);
