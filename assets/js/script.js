@@ -89,3 +89,25 @@ function fetchWeatherData(sunnyCity) {
     $("#city-country-container").append(city).append(celsiusTemp)
 })
 };
+
+var likes = 0;
+var dislikes = 0;
+
+$("#thumbsUp").on("click", function(event) {
+    event.preventDefault();
+    likes ++;
+
+    updateLikeDislikeSection();
+});
+
+$("#thumbsDown").on("click", function(event) {
+    event.preventDefault();
+    dislikes++;
+
+    updateLikeDislikeSection();
+});
+
+function updateLikeDislikeSection() {
+    $("#like").text("Likes: ").append(likes);
+    $("#dislike").text("Dislikes: ").append(dislikes);
+}
