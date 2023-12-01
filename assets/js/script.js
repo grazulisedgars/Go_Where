@@ -20,6 +20,7 @@ $("#sunny").on("click", function(event) {
     $("#start-screen").hide();
     $("#second-screen").show();
     $("#city-country-container").empty();
+    $("#second-screen").removeClass();
     // Fetches current weather info
     var randomSunnyDestination = getRandomSunnyDestination();
     fetchWeatherData(randomSunnyDestination.city);
@@ -36,6 +37,7 @@ $("#snowy").on("click", function(event) {
     $("#start-screen").hide();
     $("#second-screen").show();
     $("#city-country-container").empty();
+    $("#second-screen").removeClass();
     // Fetches current weather info
     var randomSnowyDestination = getRandomSnowyDestination();
     fetchWeatherData(randomSnowyDestination.city);
