@@ -2,8 +2,16 @@ h1 {
     color: blue;
 }
 
-body { 
+.bg-snowy { 
     background: url(../images/bg_snowy.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .bg-sunny { 
+    background: url(../images/bg_sunny01.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
