@@ -1,28 +1,60 @@
-console.log("This thing is linked");
 
-// Adding some comments
+// Hides 2nd second-screen 
+$(document).ready(function () {
+    $("#second-screen").hide();
+});
 
-// function fetchVideo(a) {
-//     var queryURL = "https://api.dailymotion.com/videos?ids=" + a;
-    
-//     fetch(queryURL)
-//     .then(function (response) {
-//         return response.json();
-//     })
-//     .then(function (data) {
-//         console.log(data);
-//     })
-// }
 
-// fetchVideo(sunny);
+// Go back event listener
+$("#go-back").on("click", function(event) {
+    event.preventDefault();
+    $("#second-screen").hide();
+    $("#start-screen").show();
+    // Perhaps add a line where it clears local storage? Go back = refresh?
+})
 
-// utilizes DailyMotion Library API 
-var sunnyVideo = destinationSun[0].video;
-console.log(sunnyVideo);
-var sunnyCity = destinationSun[0].city;
-console.log(sunnyCity);
 
-dailymotion.createPlayer('video-player', {video:sunnyVideo});
+// Event listener Sunny 
+$("#sunny").on("click", function(event) {
+    event.preventDefault();
+    $("#start-screen").hide();
+    $("#second-screen").show();
+    $("#city-country-container").empty();
+    // Fetches current weather info
+    var randomSunnyDestination = getRandomSunnyDestination();
+    fetchWeatherData(randomSunnyDestination.city);
+    // Fetches current weather info
+    dailymotion.createPlayer('video-player', { video: randomSunnyDestination.video});
+});
+
+
+// Event listener Snowy
+$("#snowy").on("click", function(event) {
+    event.preventDefault();
+    $("#start-screen").hide();
+    $("#second-screen").show();
+    $("#city-country-container").empty();
+    // Fetches current weather info
+    var randomSnowyDestination = getRandomSnowyDestination();
+    fetchWeatherData(randomSnowyDestination.city);
+    // Fetches current weather info
+    dailymotion.createPlayer('video-player', { video: randomSnowyDestination.video});
+});
+
+
+// Function to get a random sunny destination 
+function getRandomSunnyDestination() {
+    var randomIndex = Math.floor(Math.random() * destinationSun.length);
+    return destinationSun[randomIndex];
+};
+
+
+// Function to get a random snowy destination
+function getRandomSnowyDestination() {
+    var randomIndex1 = Math.floor(Math.random() * destinationSnow.length);
+    return destinationSnow[randomIndex1];
+};
+
 
 // OpenWeather
 function fetchWeatherData(sunnyCity) {
@@ -35,27 +67,25 @@ function fetchWeatherData(sunnyCity) {
     .then(function (data) {
         console.log(data);
         
-        // Weather icon data 
-        var weatherIcon = data.weather[0].icon;
-        var iconURL = "https://openweathermap.org/img/wn/" + weatherIcon + ".png";
-var weatherIcon = $("<img>").attr("src", iconURL).attr("alt", "Weather Icon").css( {
+    // Weather icon data 
+    var weatherIcon = data.weather[0].icon;
+     var iconURL = "https://openweathermap.org/img/wn/" + weatherIcon + ".png";
+    var weatherIcon = $("<img>").attr("src", iconURL).attr("alt", "Weather Icon").css( {
     'vertical-align': 'middle',
     'margin-right': '5px', 
     'width': '40px',
     'height': '40px'  
 });
 
-// Display city 
-var city = $("<h2>").text(data.name + " ");
-city.append(weatherIcon);
+    // Display city 
+    var city = $("<h2>").text(data.name + " ");
+    city.append(weatherIcon);
 
-// Display Temp (p)
-var celsiusTemp = data.main.temp - 273.15;
-var celsiusTemp = $("<p>").text("Temp: " + celsiusTemp.toFixed(2) + " °C");
+    // Display Temp (p)
+    var celsiusTemp = data.main.temp - 273.15;
+    var celsiusTemp = $("<p>").text("Temp: " + celsiusTemp.toFixed(2) + " °C");
 
-// Append to today section
-$("#city-country-container").append(city).append(celsiusTemp)
+    // Append to today section
+    $("#city-country-container").append(city).append(celsiusTemp)
 })
-}
-
-fetchWeatherData(sunnyCity);
+};
