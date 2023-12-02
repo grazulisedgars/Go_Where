@@ -1,5 +1,6 @@
-
-// Hides 2nd second-screen 
+// API Key
+destinations = [];
+// Hides 2nd second-screen
 $(document).ready(function () {
     $("#second-screen").hide();
     $("#go-back").hide();
@@ -24,11 +25,17 @@ $("#sunny").on("click", function(event) {
     $("#city-country-container").empty();
     $("#second-screen").removeClass();
     $("#go-back").show();
+    destinations = destinationSun;
+    
+    randIndex = getRandomIndex();
+    randomDestination = destinations[randIndex];;
+    console.log(randomDestination);
+    destinations.splice(randIndex, 1);
+    console.log(destinations);
+
+    fetchWeatherData(randomDestination.city);
     // Fetches current weather info
-    var randomSunnyDestination = getRandomSunnyDestination();
-    fetchWeatherData(randomSunnyDestination.city);
-    // Fetches current weather info
-    dailymotion.createPlayer('video-player', { video: randomSunnyDestination.video});
+    dailymotion.createPlayer('video-player', { video: randomDestination.video});
     // Changes background image
     $("#second-screen").addClass("bg-sunny");
 });
@@ -42,28 +49,35 @@ $("#snowy").on("click", function(event) {
     $("#city-country-container").empty();
     $("#second-screen").removeClass();
     $("#go-back").show();
+    destinations = destinationSnow;
     // Fetches current weather info
-    var randomSnowyDestination = getRandomSnowyDestination();
-    fetchWeatherData(randomSnowyDestination.city);
+    randIndex = getRandomIndex();
+    randomDestination = destinations[randIndex];;
+    console.log(randomDestination);
+    destinations.splice(randIndex, 1);
+    console.log(destinations);
+
+    fetchWeatherData(randomDestination.city);
     // Fetches current weather info
-    dailymotion.createPlayer('video-player', { video: randomSnowyDestination.video});
+    dailymotion.createPlayer('video-player', { video: randomDestination.video});
     // Changes background image
     $("#second-screen").addClass("bg-snowy");
 });  
 
 
 // Function to get a random sunny destination 
-function getRandomSunnyDestination() {
-    var randomIndex = Math.floor(Math.random() * destinationSun.length);
-    return destinationSun[randomIndex];
+function getRandomIndex() {
+    var randomIndex = Math.floor(Math.random() * destinations.length);
+    console.log(randomIndex);
+    return randomIndex;
 };
 
 
 // Function to get a random snowy destination
-function getRandomSnowyDestination() {
-    var randomIndex1 = Math.floor(Math.random() * destinationSnow.length);
-    return destinationSnow[randomIndex1];
-};
+// function getRandomSnowyDestination() {
+//     var randomIndex1 = Math.floor(Math.random() * destinationSnow.length);
+//     return destinationSnow[randomIndex1];
+// };
 
 
 // OpenWeather
@@ -79,7 +93,7 @@ function fetchWeatherData(sunnyCity) {
         
     // Weather icon data 
     var weatherIcon = data.weather[0].icon;
-     var iconURL = "https://openweathermap.org/img/wn/" + weatherIcon + ".png";
+    var iconURL = "https://openweathermap.org/img/wn/" + weatherIcon + ".png";
     var weatherIcon = $("<img>").attr("src", iconURL).attr("alt", "Weather Icon").css( {
     'vertical-align': 'middle',
     'margin-right': '5px', 
@@ -90,11 +104,9 @@ function fetchWeatherData(sunnyCity) {
     // Display city 
     var city = $("<h2>").text(data.name + " ");
     city.append(weatherIcon);
-
     // Display Temp (p)
     var celsiusTemp = data.main.temp - 273.15;
     var celsiusTemp = $("<p>").text("Temp: " + celsiusTemp.toFixed(2) + " °C");
-
     // Append to today section
     $("#city-country-container").append(city).append(celsiusTemp)
 })
@@ -118,6 +130,18 @@ function fetchWeatherData(sunnyCity) {
     $("#modalLike").show();
     $("#close").on("click", function(event) {
         event.preventDefault();
+        $("#city-country-container").empty();
+        
+        
+        randIndex = getRandomIndex();
+        randomDestination = destinations[randIndex];;
+        console.log(randomDestination);
+        destinations.splice(randIndex, 1);
+        console.log(destinations);
+
+
+        fetchWeatherData(randomDestination.city);
+        dailymotion.createPlayer('video-player', { video: randomDestination.video});
         $("#modalLike").remove();
     });
 
@@ -137,6 +161,16 @@ function fetchWeatherData(sunnyCity) {
     $("#modalDislike").show();
     $("#close").on("click", function(event) {
         event.preventDefault();
+        $("#city-country-container").empty();
+        
+        randIndex = getRandomIndex();
+        randomDestination = destinations[randIndex];
+        console.log(randomDestination);
+        destinations.splice(randIndex, 1);
+        console.log(destinations);
+
+        fetchWeatherData(randomDestination.city);
+        dailymotion.createPlayer('video-player', { video: randomDestination.video});
         $("#modalDislike").remove();
     });
 
@@ -149,3 +183,4 @@ function updateLikeDislikeSection() {
     $("#like").text("Likes: ").append(likes);
     $("#dislike").text("Dislikes: ").append(dislikes);
 }
+
