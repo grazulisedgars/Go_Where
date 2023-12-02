@@ -108,6 +108,20 @@ function fetchWeatherData(sunnyCity) {
     $("#thumbsUp").on("click", function(event) {
     event.preventDefault();
     likes ++;
+    //create modal for likes
+    //problem - modal is addative. need to delete it after it is closed
+    //modal is working now with deletion
+    $("<div></div>").attr("id", "modalLike").addClass("modal modal-dialog-centered p-5").appendTo("body");
+    $("<div></div>").addClass("modal-content").appendTo("#modalLike");
+    $("<p></p>").text("A classy choice!").appendTo(".modal-content");
+    $("<button></button>").attr("id", "close").text("Close").appendTo(".modal-content");
+    $("#modalLike").show();
+    $("#close").on("click", function(event) {
+        event.preventDefault();
+        $("#modalLike").remove();
+    });
+
+
 
     updateLikeDislikeSection();
 });
@@ -115,6 +129,16 @@ function fetchWeatherData(sunnyCity) {
     $("#thumbsDown").on("click", function(event) {
     event.preventDefault();
     dislikes++;
+
+    $("<div></div>").attr("id", "modalDislike").addClass("modal modal-dialog-centered p-5").appendTo("body");
+    $("<div></div>").addClass("modal-content").appendTo("#modalDislike");
+    $("<p></p>").text("Okay, understood!").appendTo(".modal-content");
+    $("<button></button>").attr("id", "close").text("Close").appendTo(".modal-content");
+    $("#modalDislike").show();
+    $("#close").on("click", function(event) {
+        event.preventDefault();
+        $("#modalDislike").remove();
+    });
 
     updateLikeDislikeSection();
 });
