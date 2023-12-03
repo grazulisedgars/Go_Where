@@ -22,11 +22,20 @@ h1 {
     background-color: transparent;
   }
 
+  .second-screen-logo {
+    
+  }
+
   /* .modal{
     display: "block";
   } */
 
-  #video-player {
-    width: 75%;
-    height: auto;
+  #content-card {
+    padding-bottom: 15px;
+  }
+
+  #card-body {
+     display: flex;
+     flex-wrap: nowrap;
+     justify-content: space-around;
   }
