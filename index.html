@@ -19,15 +19,17 @@
   </head>
 
   <header>
-    <img
-      id="logo-sm"
-      src="assets/images/logo_sm.png"
-      alt="Go Where text and altered question mark with location pin."
-    />
-    <!-- logo image -->
+    <nav class="d-flex justify-content-between">
+      <img
+        id="logo-sm"
+        src="assets/images/logo_lg.png"
+        alt="Go Where text and altered question mark with location pin."
+      />
+      <!-- logo image -->
 
-    <button id="go-back">Go Back!</button>
-    <!-- Comes up only when presented with second screen -->
+      <button id="go-back" class="btn btn-outline-dark">Go Back!</button>
+      <!-- Comes up only when presented with second screen -->
+    </nav>
   </header>
 
   <body>
@@ -63,27 +65,27 @@
     </div>
 
     <div id="second-screen">
-      <div class="row justify-content-center">
+      <div class="row justify-content-center" id="second-screen-row">
         <!-- Dislikes -->
         <aside class="card col-2" id="dislike">dislike</aside>
         <!-- location data and video card -->
         <div class="card col-8" id="content-card">
           <div class="card-body text-center" id="card-body">
-            <button id="thumbsDown">
+            <button id="thumbsDown" class="thumbs">
               <i
                 class="fa-solid fa-thumbs-down fa-flip-horizontal fa-lg"
                 style="color: #cc1414"
               ></i>
             </button>
             <div id="city-country-container"></div>
-            <button id="thumbsUp">
+            <button id="thumbsUp" class="thumbs">
               <i class="fa-solid fa-thumbs-up fa-lg" style="color: #42bc20"></i>
             </button>
           </div>
           <section class="card-img-bottom" id="video-player"></section>
         </div>
         <!-- Likes -->
-        <aside class="card col-2" id="like">like</aside>
+        <aside class="card col-2 user-choices" id="like">like</aside>
       </div>
 
       <section id="video-player"></section>
