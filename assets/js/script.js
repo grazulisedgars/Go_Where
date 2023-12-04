@@ -43,6 +43,9 @@ $("#sunny").on("click", function(event) {
     $("#dislikeList").empty();
     $("#likeList").text("Likes: ");
     $("#dislikeList").text("Dislikes: ");
+
+    $("#thumbsUp").show();  
+    $("#thumbsDown").show();
   
     counter = 0;
    
@@ -55,7 +58,7 @@ $("#sunny").on("click", function(event) {
     $("#go-back").show();
 
     // destinations set to equal sunny destinations
-    destinations = destinationSun;
+    destinations = destinations.concat(destinationSun);
     
     // call to random number function- returning random number between 0 and length of destinations array
     randIndex = getRandomIndex();
@@ -87,6 +90,8 @@ $("#snowy").on("click", function(event) {
     $("#likeList").text("Likes: ");
     $("#dislikeList").text("Dislikes: ");
 
+    $("#thumbsUp").show();
+    $("#thumbsDown").show();
     
     counter = 0;
   
@@ -96,7 +101,9 @@ $("#snowy").on("click", function(event) {
     $("#city-country-container").empty();
     $("#second-screen").removeClass();
     $("#go-back").show();
-    destinations = destinationSnow;
+
+    destinations = destinations.concat(destinationSnow);
+    console.log(destinations);
     // Fetches current weather info
     randIndex = getRandomIndex();
     randomDestination = destinations[randIndex];
@@ -191,9 +198,9 @@ function fetchWeatherData(sunnyCity) {
 // MODAL CLOSE BUTTON CLICK EVENT - CLOSES MODAL, UPDATES WEATHER, VIDEO, AND COUNTER
     $("#close").on("click", function(event) {
         event.preventDefault();
+       
+        if(destinations.length > 0) {
         $("#city-country-container").empty();
-    
-        
         randIndex = getRandomIndex();
         randomDestination = destinations[randIndex];
 
@@ -206,7 +213,13 @@ function fetchWeatherData(sunnyCity) {
         fetchWeatherData(randomDestination.city);
         dailymotion.createPlayer('video-player', { video: randomDestination.video});
         $("#modalLike").remove();
-        
+        } else {
+            //Temporary solution to remove modal and video player when there are no more destinations
+            $("#modalLike").remove();
+            $("#thumbsUp").hide();
+            $("#thumbsDown").hide();
+            $("#city-country-container").text("No more destinations!");
+        }
       
         
     });
@@ -259,6 +272,7 @@ function fetchWeatherData(sunnyCity) {
 // CLICK EVENT FOR MODAL CLOSE BUTTON - CLOSES MODAL, UPDATES WEATHER, VIDEO, AND COUNTER
     $("#close").on("click", function(event) {
         event.preventDefault();
+        if(destinations.length > 0) {
         $("#city-country-container").empty();
         
         randIndex = getRandomIndex();
@@ -274,11 +288,20 @@ function fetchWeatherData(sunnyCity) {
         dailymotion.createPlayer('video-player', { video: randomDestination.video});
         $("#modalDislike").remove();
         
+        } else {
+            //Temporary solution to remove modal and video player when there are no more destinations
+            $("#modalDislike").remove();
+            $("#thumbsUp").hide();
+            $("#thumbsDown").hide();
+            $("#city-country-container").text("No more destinations!");
+            console.log(snowyDestinations);
+        }
         // adding disliked destinations to the disliked list
        
     });
     updateLikeDislikeSection();
 });
+
 
 //USER RESPONSE DISLIKE FUNCTIONALITY END--------------------------------------------------------------------------
 
