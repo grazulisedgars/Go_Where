@@ -48,7 +48,7 @@
 }
 
 p {
-    font-size: 1.25em;
+  font-size: 1.25em;
 }
 
 .btn {
@@ -99,13 +99,18 @@ p {
   background-color: transparent;
 }
 
+.thumbs,
+.thumbs:active,
+.thumbs:focus {
+    outline: none;
+}
+
 .fa-solid {
   opacity: 0.75;
 }
 
 .fa-solid:hover {
-  box-shadow: 0 12px 10px 0 rgba(0, 0, 0, 0.3),
-    0 17px 25px 0 rgba(0, 0, 0, 0.19);
+  filter: drop-shadow(2px 2px 3px black);
   opacity: 1;
 }
 
@@ -115,4 +120,12 @@ p {
 
 aside.card {
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+#modalLike,
+#modalDislike {
+    width: 50%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }

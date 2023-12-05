@@ -5,6 +5,7 @@ $(document).ready(function () {
     $("#second-screen").hide();
     // $("#go-back").hide();
     $("header").hide();
+    $("#myModal").modal("hide");
 });
 
 
@@ -115,8 +116,8 @@ function fetchWeatherData(sunnyCity) {
     var weatherIcon = $("<img>").attr("src", iconURL).attr("alt", "Weather Icon").css( {
     'vertical-align': 'middle',
     'margin-right': '5px', 
-    'width': '40px',
-    'height': '40px'  
+    'width': '80px',
+    'height': '80px'  
 });
 
     // Display city 
@@ -171,7 +172,7 @@ function fetchWeatherData(sunnyCity) {
     $("#thumbsDown").on("click", function(event) {
     event.preventDefault();
     dislikes++;
-
+    $('#myModal').modal('show');
     $("<div></div>").attr("id", "modalDislike").addClass("modal modal-dialog-centered p-5").appendTo("body");
     $("<div></div>").addClass("modal-content").appendTo("#modalDislike");
     $("<p></p>").text("Okay, understood!").appendTo(".modal-content");
