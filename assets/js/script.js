@@ -123,7 +123,7 @@ $("#snowy").on("click", function(event) {
     $("#city-country-container").empty();
     $("#second-screen").removeClass();
 
-    // $("#go-back").show();
+    $("#go-back").show();
     $("header").show();
     destinations = destinations.concat(destinationSnow);
     console.log(destinations);
