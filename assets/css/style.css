@@ -47,8 +47,10 @@
   min-height: 100vh;
 }
 
-p {
-  font-size: 1.25em;
+#start-screen p {
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 1.25em;
 }
 
 .btn {
@@ -128,4 +130,32 @@ aside.card {
     text-align: center;
     align-items: center;
     justify-content: center;
+}
+
+/* Media query for Large Smartphone */ 
+@media only screen and (max-width: 767px) {
+    #logo-lg {
+        height: auto;
+        width: 50%;
+    }
+
+    #start-screen p {
+       font-size: 1em;
+    }
+
+    #second-screen-row {
+        flex-wrap: wrap; 
+    }
+
+    #content-card {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .fa-lg {
+        font-size: 3em !important;
+      }
+
+    .h2, h2 {
+        font-size: 18px;
+    }
 }
