@@ -124,7 +124,7 @@ aside.card {
 
 #modalLike,
 #modalDislike {
-    width: 50%;
+    width: 100%;
     text-align: center;
     align-items: center;
     justify-content: center;
