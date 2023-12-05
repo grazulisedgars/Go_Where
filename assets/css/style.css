@@ -1,5 +1,5 @@
-h1 {
-    color: blue;
+p {
+    text-align: center;
 }
 
 .bg-snowy { 
@@ -19,14 +19,45 @@ h1 {
   }
 
   header {
-    background-color: transparent;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  /* .modal{
-    display: "block";
-  } */
+  header img {
+    height: 50px;
+    width: auto;
+    margin: auto;
+  }
 
   #video-player {
     width: 75%;
     height: auto;
+    margin: auto;
+  }
+
+  #go-back {
+    margin: 10px;
+  }
+
+  #button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%; 
+ }
+
+  #sunny, #snowy {
+    margin-right: 5%;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+
+  #snowy {
+    margin-left: 5%;
   }

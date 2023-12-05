@@ -4,28 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Go Where?</title>
-    <link rel="stylesheet" href="assets/css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/fea14404d3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <header>
-    <img src="" alt=""> <!-- logo image -->
+    <img class= "image" src="assets/images/Adidas_logo.png" alt="Trial logo"> <!-- logo image -->
 
-    <button id="go-back"> Go Back! </button> <!-- Comes up only when presented with second screen -->
+    <button id="go-back" class="btn btn-outline-dark"> Start Again! </button> <!-- Comes up only when presented with second screen -->
 
 </header>
 
 <body>
     <div id="start-screen">
-        <h1>GoWhere</h1>
         <p>Most of us live for a holiday, but with so many places and so little time it's often hard to know just where to go.</p>
         <p>GoWhere has you covered! Simply select the type of holiday you want and we'll show you a video from our currated list of destinations that matches your criteria.</p>
         <p>Sun seeker ☀️? Select "GO SUNNY" and we'll show you some of the sunniest spots for your sojourn.</p>
         <p>Or maybe you like to chill ❄️? Select "GO SNOWY" and we'll serve up ideas from our cool collection.</p>
-        <button id="sunny"> GO SUNNY </button> <!-- Sunnny button-->
-        <button id="snowy"> GO SNOWY </button> <!-- Snowy button-->
+        <div id="button-container">
+            <button id="sunny" class="btn btn-warning"> GO SUNNY </button> <!-- Sunnny button-->
+            <button id="snowy" class="btn btn-primary"> GO SNOWY </button> <!-- Snowy button-->
+        </div>
+        
     </div>
 
     <div id="second-screen">
