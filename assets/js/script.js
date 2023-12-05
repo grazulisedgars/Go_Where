@@ -30,7 +30,7 @@ $("#go-back").on("click", function(event) {
     // $("#go-back").hide();
     $("header").hide();
     // Perhaps add a line where it clears local storage? Go back = refresh?
-})
+});
 
 // Hover Sunny button
 $("#sunny").mouseover(function() {
@@ -45,8 +45,7 @@ $("#sunny").mouseout(function() {
     dislikes = 0;
     $("#like").text("");
     $("#dislike").text("");
-  
-})
+
 
 //GO SUNNY START--------------------------------------------------------------------------
 // Event listener Sunny 
@@ -70,7 +69,7 @@ $("#sunny").on("click", function(event) {
     $("#city-country-container").empty();
     $("#second-screen").removeClass();
 
-    // $("#go-back").show();
+    $("#go-back").show();
     $("header").show();
     // destinations set to equal sunny destinations
     destinations = destinations.concat(destinationSun);
@@ -126,7 +125,7 @@ $("#snowy").on("click", function(event) {
     $("#city-country-container").empty();
     $("#second-screen").removeClass();
 
-    // $("#go-back").show();
+    $("#go-back").show();
     $("header").show();
     destinations = destinations.concat(destinationSnow);
     console.log(destinations);
@@ -208,9 +207,16 @@ function fetchWeatherData(sunnyCity) {
     counter ++;
     //CREATE MODAL FOR LIKES
     $("<div></div>").attr("id", "modalLike").addClass("modal modal-dialog-centered p-5").appendTo("body");
-    $("<div></div>").addClass("modal-content").appendTo("#modalLike");
+    $("<div></div>").addClass("modal-content").appendTo("#modalLike").css({
+        'margin-left': '14%',
+        'margin-right': '14%',
+        'padding': '10%'
+    });
     $("<p></p>").text("A classy choice!").appendTo(".modal-content");
-    $("<button></button>").attr("id", "close").text("Close").appendTo(".modal-content");
+    $("<button></button>").attr("id", "close").text("Close").appendTo(".modal-content").addClass("btn btn-outline-dark").css({
+        'margin-left': '30%',
+        'margin-right': '30%'
+    });
     $("#modalLike").show();
     
     // IF STATEMENT TO POPULATE LIKE LIST
@@ -282,9 +288,16 @@ function fetchWeatherData(sunnyCity) {
     counter ++;
 //MODAL FOR DISLIKES
     $("<div></div>").attr("id", "modalDislike").addClass("modal modal-dialog-centered p-5").appendTo("body");
-    $("<div></div>").addClass("modal-content").appendTo("#modalDislike");
+    $("<div></div>").addClass("modal-content").appendTo("#modalDislike").css({
+        'margin-left': '14%',
+        'margin-right': '14%',
+        'padding': '10%'
+    });
     $("<p></p>").text("Okay, understood!").appendTo(".modal-content");
-    $("<button></button>").attr("id", "close").text("Close").appendTo(".modal-content");
+    $("<button></button>").attr("id", "close").text("Close").appendTo(".modal-content").addClass("btn btn-outline-dark").css({
+        'margin-left': '30%',
+        'margin-right': '30%'
+    });
     $("#modalDislike").show();
 //FOR LOOP TO POPULATE DISLIKE LIST
     for(var j = 0; j < localStorage.length; j++) {
