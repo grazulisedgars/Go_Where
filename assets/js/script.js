@@ -214,8 +214,8 @@ function fetchWeatherData(sunnyCity) {
     });
     $("<p></p>").text("A classy choice!").appendTo(".modal-content");
     $("<button></button>").attr("id", "close").text("Close").appendTo(".modal-content").addClass("btn btn-outline-dark").css({
-        'margin-left': '30%',
-        'margin-right': '30%'
+        'margin-left': '20%',
+        'margin-right': '20%'
     });
     $("#modalLike").show();
     
