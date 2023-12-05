@@ -208,8 +208,8 @@ function fetchWeatherData(sunnyCity) {
     //CREATE MODAL FOR LIKES
     $("<div></div>").attr("id", "modalLike").addClass("modal modal-dialog-centered p-5").appendTo("body");
     $("<div></div>").addClass("modal-content").appendTo("#modalLike").css({
-        'margin-left': '14%',
-        'margin-right': '14%',
+        'margin-left': '13%',
+        'margin-right': '13%',
         'padding': '10%'
     });
     $("<p></p>").text("A classy choice!").appendTo(".modal-content");
@@ -289,8 +289,8 @@ function fetchWeatherData(sunnyCity) {
 //MODAL FOR DISLIKES
     $("<div></div>").attr("id", "modalDislike").addClass("modal modal-dialog-centered p-5").appendTo("body");
     $("<div></div>").addClass("modal-content").appendTo("#modalDislike").css({
-        'margin-left': '14%',
-        'margin-right': '14%',
+        'margin-left': '13%',
+        'margin-right': '13%',
         'padding': '10%'
     });
     $("<p></p>").text("Okay, understood!").appendTo(".modal-content");
