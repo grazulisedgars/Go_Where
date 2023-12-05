@@ -35,6 +35,7 @@ $("#go-back").on("click", function(event) {
     dislikes = 0;
     $("#like").text("");
     $("#dislike").text("");
+    destinations = [];
 });
 
 // Hover Sunny button
@@ -123,7 +124,7 @@ $("#snowy").on("click", function(event) {
     $("#city-country-container").empty();
     $("#second-screen").removeClass();
 
-    // $("#go-back").show();
+    $("#go-back").show();
     $("header").show();
     destinations = destinations.concat(destinationSnow);
     console.log(destinations);
