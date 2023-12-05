@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Go Where?</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Bootstrap CSS -->
     <link
     rel="stylesheet"
@@ -16,6 +15,7 @@
     src="https://kit.fontawesome.com/fea14404d3.js"
     crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
   <header>
@@ -59,13 +59,13 @@
         <button id="snowy" class="btn btn-lg btn-info">GO SNOWY</button>
       </nav>
     </div>
-    
+
     <div id="second-screen">
       <div class="row justify-content-center" id="second-screen-row">
         <!-- Dislikes -->
-        <aside class="card col-2" id="dislikeList"></aside>
+        <aside class="card col-sm-6 col-md-2 order-2 order-md-1" id="dislikeList"></aside>
         <!-- location data and video card -->
-        <div class="card col-8" id="content-card">
+        <div class="card col-sm-12 col-md-8 order-1 order-md-2" id="content-card">
           <div class="card-body text-center" id="card-body">
             <button id="thumbsDown" class="thumbs">
               <i
@@ -81,7 +81,7 @@
           <section class="card-img-bottom" id="video-player"></section>
         </div>
         <!-- Likes -->
-        <aside class="card col-2 user-choices" id="likeList"></aside>
+        <aside class="card col-sm-6 col-md-2 user-choices order-3 order-md-3" id="likeList"></aside>
       </div>
       <section id="video-player"></section>
     </div>
