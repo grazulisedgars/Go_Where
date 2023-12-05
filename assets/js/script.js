@@ -35,6 +35,7 @@ $("#go-back").on("click", function(event) {
     dislikes = 0;
     $("#like").text("");
     $("#dislike").text("");
+    destinations = [];
 });
 
 // Hover Sunny button
