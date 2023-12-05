@@ -5,7 +5,6 @@ $(document).ready(function () {
     $("#second-screen").hide();
     // $("#go-back").hide();
     $("header").hide();
-    $("#myModal").modal("hide");
 });
 
 
