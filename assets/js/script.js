@@ -169,11 +169,12 @@ function fetchWeatherData(sunnyCity) {
 });
 
     // Display city 
-    var city = $("<h2>").text(data.name + " ");
-    city.append(weatherIcon);
+    var city = $("<h2>").text(data.name + ", " + randomDestination.country);
+    // city.append(weatherIcon);
     // Display Temp (p)
     var celsiusTemp = data.main.temp - 273.15;
     var celsiusTemp = $("<p>").text("Temp: " + celsiusTemp.toFixed(2) + " °C");
+    celsiusTemp.append(weatherIcon);
     // Append to today section
     $("#city-country-container").append(city).append(celsiusTemp)
 })
