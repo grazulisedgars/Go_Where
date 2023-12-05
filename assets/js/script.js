@@ -30,24 +30,21 @@ $("#go-back").on("click", function(event) {
     // $("#go-back").hide();
     $("header").hide();
     // Perhaps add a line where it clears local storage? Go back = refresh?
-})
+    $("#go-back").hide();
+    likes = 0;
+    dislikes = 0;
+    $("#like").text("");
+    $("#dislike").text("");
+});
 
 // Hover Sunny button
 $("#sunny").mouseover(function() {
     $("#start-screen").addClass("bg-sunny");
 });
 $("#sunny").mouseout(function() {
-    $("#start-screen").removeClass("bg-sunny");
+    $("#start-screen").removeClass("bg-sunny");   
 });
-
-    $("#go-back").hide();
-    likes = 0;
-    dislikes = 0;
-    $("#like").text("");
-    $("#dislike").text("");
-  
-})
-
+    
 //GO SUNNY START--------------------------------------------------------------------------
 // Event listener Sunny 
 $("#sunny").on("click", function(event) {
@@ -70,7 +67,7 @@ $("#sunny").on("click", function(event) {
     $("#city-country-container").empty();
     $("#second-screen").removeClass();
 
-    // $("#go-back").show();
+    $("#go-back").show();
     $("header").show();
     // destinations set to equal sunny destinations
     destinations = destinations.concat(destinationSun);
@@ -172,11 +169,12 @@ function fetchWeatherData(sunnyCity) {
 });
 
     // Display city 
-    var city = $("<h2>").text(data.name + " ");
-    city.append(weatherIcon);
+    var city = $("<h2>").text(data.name + ", " + randomDestination.country);
+    // city.append(weatherIcon);
     // Display Temp (p)
     var celsiusTemp = data.main.temp - 273.15;
     var celsiusTemp = $("<p>").text("Temp: " + celsiusTemp.toFixed(2) + " °C");
+    celsiusTemp.append(weatherIcon);
     // Append to today section
     $("#city-country-container").append(city).append(celsiusTemp)
 })
