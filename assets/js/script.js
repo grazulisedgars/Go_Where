@@ -18,6 +18,13 @@ $("#go-back").on("click", function(event) {
     // Perhaps add a line where it clears local storage? Go back = refresh?
 })
 
+// Hover Sunny button
+$("#sunny").mouseover(function() {
+    $("#start-screen").addClass("bg-sunny");
+});
+$("#sunny").mouseout(function() {
+    $("#start-screen").removeClass("bg-sunny");
+});
 
 // Event listener Sunny 
 $("#sunny").on("click", function(event) {
@@ -43,6 +50,13 @@ $("#sunny").on("click", function(event) {
     $("#second-screen").addClass("bg-sunny");
 });
 
+// Hover Snowy button
+$("#snowy").mouseover(function() {
+    $("#start-screen").addClass("bg-snowy");
+});
+$("#snowy").mouseout(function() {
+    $("#start-screen").removeClass("bg-snowy");
+});
 
 // Event listener Snowy
 $("#snowy").on("click", function(event) {
