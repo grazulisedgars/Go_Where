@@ -140,18 +140,25 @@ function fetchWeatherData(sunnyCity) {
     var weatherIcon = $("<img>").attr("src", iconURL).attr("alt", "Weather Icon").css( {
     'vertical-align': 'middle',
     'margin-right': '5px', 
-    'width': '40px',
-    'height': '40px'  
+    'width': '50px',
+    'height': '50px'  
 });
 
     // Display city 
-    var city = $("<h2>").text(data.name + " ");
+    var city = $("<h2>").text(data.name + " ").css({
+        'padding-top': '2%'
+    }
+    );
     city.append(weatherIcon);
     // Display Temp (p)
     var celsiusTemp = data.main.temp - 273.15;
-    var celsiusTemp = $("<p>").text("Temp: " + celsiusTemp.toFixed(2) + " °C");
+    var celsiusTemp = $("<p>").text("Temp: " + celsiusTemp.toFixed(2) + " °C").css({
+        'text-align': 'left'
+    });
     // Append to today section
-    $("#city-country-container").append(city).append(celsiusTemp)
+    $("#city-country-container").append(city).append(celsiusTemp).css({
+        'margin-left': '2%'
+    })
 })
 };
 //OPEN WEATHER END--------------------------------------------------------------------------
