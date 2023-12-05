@@ -29,7 +29,7 @@ p {
   header img {
     height: 50px;
     width: auto;
-    margin: auto;
+    margin-left: 50%;
   }
 
   #video-player {
