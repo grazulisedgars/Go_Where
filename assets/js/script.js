@@ -17,7 +17,8 @@ var dislikes = 0;
 // Hides second screen
 $(document).ready(function () {
     $("#second-screen").hide();
-    $("#go-back").hide();
+    // $("#go-back").hide();
+    $("header").hide();
 });
 
 
@@ -26,6 +27,19 @@ $("#go-back").on("click", function(event) {
     event.preventDefault();
     $("#second-screen").hide();
     $("#start-screen").show();
+    // $("#go-back").hide();
+    $("header").hide();
+    // Perhaps add a line where it clears local storage? Go back = refresh?
+})
+
+// Hover Sunny button
+$("#sunny").mouseover(function() {
+    $("#start-screen").addClass("bg-sunny");
+});
+$("#sunny").mouseout(function() {
+    $("#start-screen").removeClass("bg-sunny");
+});
+
     $("#go-back").hide();
     likes = 0;
     dislikes = 0;
@@ -55,10 +69,12 @@ $("#sunny").on("click", function(event) {
     $("#second-screen").show();
     $("#city-country-container").empty();
     $("#second-screen").removeClass();
-    $("#go-back").show();
 
+    // $("#go-back").show();
+    $("header").show();
     // destinations set to equal sunny destinations
     destinations = destinations.concat(destinationSun);
+
     
     // call to random number function- returning random number between 0 and length of destinations array
     randIndex = getRandomIndex();
@@ -73,6 +89,15 @@ $("#sunny").on("click", function(event) {
     dailymotion.createPlayer('video-player', { video: randomDestination.video});
     // Changes background image
     $("#second-screen").addClass("bg-sunny");
+});
+
+
+// Hover Snowy button
+$("#snowy").mouseover(function() {
+    $("#start-screen").addClass("bg-snowy");
+});
+$("#snowy").mouseout(function() {
+    $("#start-screen").removeClass("bg-snowy");
 });
 
 //GO SUNNY END--------------------------------------------------------------------------
@@ -100,10 +125,12 @@ $("#snowy").on("click", function(event) {
     $("#second-screen").show();
     $("#city-country-container").empty();
     $("#second-screen").removeClass();
-    $("#go-back").show();
 
+    // $("#go-back").show();
+    $("header").show();
     destinations = destinations.concat(destinationSnow);
     console.log(destinations);
+
     // Fetches current weather info
     randIndex = getRandomIndex();
     randomDestination = destinations[randIndex];
@@ -140,8 +167,8 @@ function fetchWeatherData(sunnyCity) {
     var weatherIcon = $("<img>").attr("src", iconURL).attr("alt", "Weather Icon").css( {
     'vertical-align': 'middle',
     'margin-right': '5px', 
-    'width': '40px',
-    'height': '40px'  
+    'width': '80px',
+    'height': '80px'  
 });
 
     // Display city 
@@ -240,6 +267,7 @@ function fetchWeatherData(sunnyCity) {
     $("#dislikeList").text("Dislikes: ");
     //ADD TO DISLIKE COUNTER
     dislikes++;
+
     //SET CURRENT DESTINATION TO LOCAL STORAGE AND SAVE DISLIKE
     randomDestination.userOpinion = "dislike";
     localStorage.setItem(counter, JSON.stringify(randomDestination));
