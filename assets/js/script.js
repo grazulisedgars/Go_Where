@@ -30,6 +30,12 @@ $("#go-back").on("click", function(event) {
     // $("#go-back").hide();
     $("header").hide();
     // Perhaps add a line where it clears local storage? Go back = refresh?
+    $("#go-back").hide();
+    likes = 0;
+    dislikes = 0;
+    $("#like").text("");
+    $("#dislike").text("");
+    destinations = [];
 });
 
 // Hover Sunny button
@@ -37,16 +43,9 @@ $("#sunny").mouseover(function() {
     $("#start-screen").addClass("bg-sunny");
 });
 $("#sunny").mouseout(function() {
-    $("#start-screen").removeClass("bg-sunny");
+    $("#start-screen").removeClass("bg-sunny");   
 });
-
-    $("#go-back").hide();
-    likes = 0;
-    dislikes = 0;
-    $("#like").text("");
-    $("#dislike").text("");
-
-
+    
 //GO SUNNY START--------------------------------------------------------------------------
 // Event listener Sunny 
 $("#sunny").on("click", function(event) {
@@ -171,16 +170,12 @@ function fetchWeatherData(sunnyCity) {
 });
 
     // Display city 
-    var city = $("<h2>").text(data.name + " ").css({
-        'padding-top': '2%'
-    }
-    );
-    city.append(weatherIcon);
+    var city = $("<h2>").text(data.name + ", " + randomDestination.country);
+    // city.append(weatherIcon);
     // Display Temp (p)
     var celsiusTemp = data.main.temp - 273.15;
-    var celsiusTemp = $("<p>").text("Temp: " + celsiusTemp.toFixed(2) + " °C").css({
-        'text-align': 'left'
-    });
+    var celsiusTemp = $("<p>").text("Temp: " + celsiusTemp.toFixed(2) + " °C");
+    celsiusTemp.append(weatherIcon);
     // Append to today section
     $("#city-country-container").append(city).append(celsiusTemp).css({
         'margin-left': '2%'
@@ -214,8 +209,8 @@ function fetchWeatherData(sunnyCity) {
     });
     $("<p></p>").text("A classy choice!").appendTo(".modal-content");
     $("<button></button>").attr("id", "close").text("Close").appendTo(".modal-content").addClass("btn btn-outline-dark").css({
-        'margin-left': '20%',
-        'margin-right': '20%'
+        'margin-left': '30%',
+        'margin-right': '30%'
     });
     $("#modalLike").show();
     
@@ -287,18 +282,18 @@ function fetchWeatherData(sunnyCity) {
     console.log(counter);
     counter ++;
 //MODAL FOR DISLIKES
-    $("<div></div>").attr("id", "modalDislike").addClass("modal modal-dialog-centered p-5").appendTo("body");
-    $("<div></div>").addClass("modal-content").appendTo("#modalDislike").css({
-        'margin-left': '14%',
-        'margin-right': '14%',
-        'padding': '10%'
-    });
-    $("<p></p>").text("Okay, understood!").appendTo(".modal-content");
-    $("<button></button>").attr("id", "close").text("Close").appendTo(".modal-content").addClass("btn btn-outline-dark").css({
-        'margin-left': '30%',
-        'margin-right': '30%'
-    });
-    $("#modalDislike").show();
+$("<div></div>").attr("id", "modalDislike").addClass("modal modal-dialog-centered p-5").appendTo("body");
+$("<div></div>").addClass("modal-content").appendTo("#modalDislike").css({
+    'margin-left': '14%',
+    'margin-right': '14%',
+    'padding': '10%'
+});
+$("<p></p>").text("Okay, understood!").appendTo(".modal-content");
+$("<button></button>").attr("id", "close").text("Close").appendTo(".modal-content").addClass("btn btn-outline-dark").css({
+    'margin-left': '30%',
+    'margin-right': '30%'
+});
+$("#modalDislike").show();
 //FOR LOOP TO POPULATE DISLIKE LIST
     for(var j = 0; j < localStorage.length; j++) {
      
