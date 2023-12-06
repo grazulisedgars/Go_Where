@@ -59,3 +59,14 @@ Contains the styling for the site which overrides some of the default styling pr
 - [Daily Motion API](https://developer.dailymotion.com/)
 - [Bootstrap](https://getbootstrap.com/)
 - [jQuery](https://jquery.com/)
+
+### Link
+https://grazulisedgars.github.io/Go_Where/
+
+### Screenshots
+![Alt text](assets/images/GoWhere1.png)
+![Alt text](assets/images/GoWhere2.png)
+![Alt text](assets/images/GoWhere3.png)
+
+### Licence
+MIT
