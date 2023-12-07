@@ -1,5 +1,5 @@
 # Go_Where
-​[Click to view deployed application](https://cariberrii.github.io/code-quiz-challenge/)
+​[Click to view deployed application](https://grazulisedgars.github.io/Go_Where/)
 
 ## Table of Contents
 
